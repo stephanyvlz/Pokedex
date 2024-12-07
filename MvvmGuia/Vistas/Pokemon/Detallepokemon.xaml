@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MvvmGuia.Vistas.Pokemon.Detallepokemon"
+             NavigationPage.HasNavigationBar="False"
+             xmlns:sharpnado="clr-namespace:Sharpnado.MaterialFrame;assembly=Sharpnado.MaterialFrame">
+    <Grid x:Name="perro">
+        <Grid.Background>
+            <SolidColorBrush Color="{Binding parametrosRecibe.Colorpoder}"/>
+        </Grid.Background>
+        <StackLayout Margin="10,0,10,0">
+            <Image Source="flechavolver.png"
+                   HeightRequest="55"
+                   HorizontalOptions="Start"
+                   Margin="10,20,0,0"
+                   >
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding Volvercommand}"/>
+                </Image.GestureRecognizers>
+            </Image>
+            <Label Text="{Binding parametrosRecibe.Nroorden}"
+                   FontSize="50"
+                   FontAttributes="Bold"
+                   TextColor="White"/>
+            <Image Source="{Binding parametrosRecibe.Icono}"
+                   HeightRequest="325"/>
+            <Label Text="{Binding parametrosRecibe.Nombre}"
+                   FontSize="40"
+                   FontAttributes="Bold"
+                   TextColor="White"
+                   HorizontalOptions="Center"/>
+            <Grid>
+                <sharpnado:MaterialFrame
+                    CornerRadius="15"
+                    MaterialBlurStyle="Light"
+                    MaterialTheme="AcrylicBlur"
+                    />
+                <StackLayout Orientation="Horizontal"
+                             Margin="20,10,20,10">
+                    <StackLayout>
+                        <Label Text="{Binding parametrosRecibe.Poder}" 
+                               FontSize="30" 
+                               FontAttributes="Bold" 
+                               TextColor="White"/>
+                        <Label Text="Poder"
+                               TextColor="White"
+                               HorizontalOptions="Center"/>
+                    </StackLayout>
+                    <StackLayout HorizontalOptions="CenterAndExpand"
+                                 >
+                        <StackLayout Orientation="Horizontal"
+                                     VerticalOptions="CenterAndExpand">
+                            <BoxView HeightRequest="30"
+                                     WidthRequest="30"
+                                     BackgroundColor="{Binding parametrosRecibe.Colorfondo}"
+                                     CornerRadius="15"
+                                     VerticalOptions="Center"/>
+                            <BoxView HeightRequest="30"
+                                     WidthRequest="30"
+                                     BackgroundColor="{Binding parametrosRecibe.Colorpoder}"
+                                     CornerRadius="15"
+                                     VerticalOptions="Center"/>
+                        </StackLayout>
+                        
+                        <Label Text="colores"
+                               TextColor="White"
+                               HorizontalOptions="Center"/>
+                    </StackLayout>
+                    <StackLayout>
+                        <Label Text="{Binding parametrosRecibe.Nroorden}" 
+                               FontSize="30" 
+                               FontAttributes="Bold" 
+                               TextColor="White"/>
+                        <Label Text="Orden"
+                               TextColor="White"
+                               HorizontalOptions="Center"/>
+                    </StackLayout>
+                </StackLayout>
+                
+            </Grid>
+            <Frame CornerRadius="30"
+                   Margin="0,20,0,0"
+                   HeightRequest="65"
+                   HasShadow="False"
+                   Padding="0">
+                <Grid ColumnDefinitions="*,*">
+                    <Button TextColor="Black"
+                            Text="Seguir"
+                            BackgroundColor="Coral"
+                            CornerRadius="30"
+                            FontAttributes="Bold"
+                            Margin="-5,-6,0,0"/>
+                    <StackLayout Grid.Column="1" Orientation="Horizontal">
+                        <StackLayout Orientation="Horizontal">
+                            
+                            <Label Text="Phany" TextColor="Black"
+                                   VerticalOptions="Center"
+                                   FontAttributes="Bold"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+
+                            <Label Text="Valenzuela" TextColor="Black"
+                                   VerticalOptions="Center"
+                                   FontAttributes="Bold"/>
+                            <Image Source="{Binding parametrosRecibe.Icono}"
+                                   
+                                   HeightRequest="30"
+                                   Margin="10,0,-10,0"/>
+                        </StackLayout>
+                    </StackLayout>
+                </Grid>
+            </Frame>
+        </StackLayout>
+    </Grid>
+</ContentPage>
